@@ -4,7 +4,7 @@ const dbConfig: DbConfig = {
   HOST: "localhost",
   USER: "postgres",
   PASSWORD: "root",
-  DB: "testdb",
+  DB: "socialmedia",
   dialect: "postgres",
   pool: {
     max: 5,
