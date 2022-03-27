@@ -39,13 +39,13 @@ export const User = (sequelize: any, Sequelize: any) => {
     {
       hooks: {
         beforeCreate: async (user: any) => {
-          if (user?.password) {
+          if (user.password) {
             const salt = bcrypt.genSaltSync(10, "a");
             user.password = bcrypt.hashSync(user.password, salt);
           }
         },
         beforeUpdate: async (user: any) => {
-          if (user?.password) {
+          if (user.password) {
             const salt = bcrypt.genSaltSync(10, "a");
             user.password = bcrypt.hashSync(user.password, salt);
           }

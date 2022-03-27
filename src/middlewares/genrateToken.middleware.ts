@@ -11,11 +11,10 @@ const genrateToken = async (
   next: NextFunction
 ) => {
   try {
-    const { firstName, email } = req.body;
+    const { email } = req.body;
     const SECRET_KEY: any = process.env.SECRET_KEY;
     const token = jwt.sign(
       {
-        firstName: firstName,
         email: email,
       },
       SECRET_KEY

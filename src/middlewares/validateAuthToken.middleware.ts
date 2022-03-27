@@ -33,7 +33,9 @@ const validateAuthToken = async (
     } else {
       return res.status(400).json({ message: "invalid token" });
     }
-  } catch (error) {}
+  } catch (error:any) {
+    return res.status(500).json({ error: error.message });
+  }
 };
 
 export default validateAuthToken;
