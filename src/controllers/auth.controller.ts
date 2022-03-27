@@ -105,7 +105,7 @@ export const forgotPassword = async (req: Request, res: Response) => {
 export const resetPassword = async (req: Request, res: Response) => {
   try {
     const newPassword = req.body.password;
-    const user = await db.User.update(
+    const user = await req.user.update(
       {
         password: newPassword,
       },
@@ -115,7 +115,6 @@ export const resetPassword = async (req: Request, res: Response) => {
         },
       }
     );
-    req.user.save();
     return res
       .status(201)
       .json({ message: "updated successfully", user: user });

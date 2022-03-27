@@ -11,6 +11,10 @@ export const User = (sequelize: any, Sequelize: any) => {
         allowNull: false,
         primaryKey: true,
       },
+      userName:{
+        type: DataTypes.STRING,
+        defaultValue: null,
+      },
       firstName: {
         type: DataTypes.STRING,
         defaultValue: null,

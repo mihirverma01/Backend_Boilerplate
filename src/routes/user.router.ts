@@ -10,7 +10,7 @@ const router = express.Router();
 router.post("/signup",genrateToken ,signup);
 router.post("/login",genrateToken ,login);
 router.post("/forgotPassword" ,forgotPassword);
-router.put("/resetPassword",validateAuthToken,resetPassword);
+router.post("/resetPassword",validateAuthToken,resetPassword);
 router.get("/private",validateAuthToken,privateRoute);
 
 export default router;
