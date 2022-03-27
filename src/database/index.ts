@@ -1,6 +1,7 @@
 import dbConfig from "../config/db.config";
 import { Sequelize } from "sequelize";
 import { User } from "../models/user.model";
+import { Connection } from "../models/connection.model";
 
 export const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
   host: dbConfig.HOST,
@@ -17,6 +18,7 @@ let db: any = {};
 
 db.test = require("../models/test.model.ts")(sequelize, Sequelize);
 db.User = User(sequelize, Sequelize);
+db.Connection = Connection(sequelize, Sequelize)
 
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;

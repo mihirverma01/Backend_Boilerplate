@@ -105,6 +105,11 @@ export const forgotPassword = async (req: Request, res: Response) => {
 export const resetPassword = async (req: Request, res: Response) => {
   try {
     const newPassword = req.body.password;
+    if(!newPassword){
+      return res
+      .status(400)
+      .json({ message: "Invalid input" });
+    }
     const user = await req.user.update(
       {
         password: newPassword,

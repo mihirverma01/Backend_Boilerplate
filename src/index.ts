@@ -5,6 +5,7 @@ import cors from "cors";
 import log from "loglevel";
 import dotenv from "dotenv";
 import authRouter from "./routes/user.router";
+import connectionRouter from "./routes/connection.router";
 import db, { sequelize } from "./database";
 
 const app: Application = express();
@@ -13,6 +14,7 @@ const PORT = 8000;
 app.use(bodyParser.json());
 app.use(cors());
 app.use("/api",authRouter);
+app.use("/api",connectionRouter);
 
 dotenv.config();
 // db.sequelize.sync({ force: true }).then(() => {
