@@ -18,7 +18,7 @@ export const Connection = (sequelize: any, Sequelize: any) => {
         key: "id",
       },
     },
-    follower_id: {
+    followed_id: {
       type: DataTypes.UUID,
       defaultValue: null,
       allowNull: false,
